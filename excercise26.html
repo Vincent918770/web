@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    
+    <style>
+        .image-container {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .rounded-img {
+            width: 33%; /* 題目要求寬度 33% */
+            height: 300px; /* 題目要求高度 300px */
+            border-radius: 18px; /* 題目要求 radius 18px  */
+            object-fit: cover; /* 關鍵：保持比例不失真  */
+        }
+
+        /* 中間圖片：圓形、邊框、無失真 */
+        .circle-img {
+              width: 150px;
+  height: 150px;
+  min-width: 150px; /* 雙重保險 */
+  min-height: 150px; 
+  border-radius: 50%;
+  border: 2px solid #333;
+  object-fit: cover;
+  flex: none; /* 防止在 flex 容器中變形 */
+        }
+
+        /* 右側圖片：直角、有失真 (預設效果) */
+        .distorted-img {
+            width: 33%; /* 題目要求寬度 33% */
+            height: 300px; /* 題目要求高度 300px */
+            /* 預設 object-fit 為 fill，會導致圖片被壓縮失真 */
+            object-fit: fill; 
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <img src="paris.jpg" alt="Paris" class="rounded-img">
+
+        <img src="mountain.jpg" alt="Mountain" class="circle-img">
+
+        <img src="paris.jpg" alt="Paris" class="distorted-img">
+    </div>
+
+</body>
+</html>
