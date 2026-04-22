@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+  /* 1. 基礎設定：移除瀏覽器預設邊距 */
+  body {
+    margin: 0;
+    padding: 0;
+    background-color: #f6f6f6;
+    font-family: 'Roboto', sans-serif;
+  }
+
+  /* 2. 固定在最上方的滿版容器 */
+  .fixed-top-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+    background-color: #ffffff; /* 這一層是白色的底，用來產生白邊 */
+    padding: 15px;             /* 這裡決定白邊的大小 */
+    box-sizing: border-box;
+    border-bottom: 1px solid #ccc; /* 加一條細線區隔下方內容 */
+  }
+
+  /* 3. 深灰色標題列 */
+  .preview-header {
+    width: 100%;
+    height: 40px;
+    background-color: lightgray; /* 深灰色背景 */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 15px;
+    box-sizing: border-box;
+    border-radius: 4px 4px 0 0; /* 上方小圓角讓介面更精緻 */
+  }
+
+  .preview-title {
+    color: black;
+    font-size: 14px;
+    font-weight: bold;
+  }
+
+  /* 按鈕規格 (h22, R8, #ffffff) */
+  .info-btn {
+    height: 22px;
+    border-radius: 8px;
+    background-color: #ffffff;
+    border: none;
+    color: #2f2f2f;
+    font-size: 12px;
+    padding: 0 15px;
+    display: inline-flex;
+    align-items: center;
+    cursor: pointer;
+    text-decoration: none;
+  }
+
+  .btn-close { display: none; }
+
+  /* 4. 預覽顯示區 (米色) */
+  .preview-display {
+    width: 100%;
+    height: 240px;
+    background-color: #ffebd6; /* 皮膚色/米色 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0 0 4px 4px; /* 下方小圓角 */
+  }
+
+  .preview-image {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+  }
+
+  /* 5. 詳細資訊區 (位在固定層下方) */
+  .details-box {
+    display: none;
+    margin: 340px auto 50px; /* 避開上方固定區域的高度 */
+    width: 450px;
+    padding: 20px;
+    background-color: #ffffff;
+    border: 1px solid #2f2f2f;
+    box-sizing: border-box;
+  }
+
+  /* 狀態切換邏輯 */
+  #details:target { display: block; }
+  #details:target ~ .fixed-top-container .btn-open { display: none; }
+  #details:target ~ .fixed-top-container .btn-close { display: inline-flex; }
+
+</style>
+</head>
+<body>
+
+  <div id="details" class="details-box">
+
+    <p>修改日期:2017/10/12</p>
+                <p>類別:JPG</p>
+                <p>大小:466.97KB</p>
+  </div>
+
+  <div class="fixed-top-container">
+    
+    <div class="preview-header">
+      <span class="preview-title">預覽</span>
+      <a href="#details" class="info-btn btn-open">查看資訊</a>
+      <a href="#" class="info-btn btn-close">收起資訊</a>
+    </div>
+
+    <div class="preview-display">
+      <img src="img_5terre.jpg" class="preview-image">
+    </div>
+
+  </div>
+
+</body>
+</html>
