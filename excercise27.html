@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Layout Task</title>
+    <style>
+        body {
+            background-color: #7eb6ff;
+            display: flex;
+            justify-content: center;
+            padding: 20px;
+            font-family: sans-serif;
+        }
+
+        .container {
+            background-color: white;
+            border-radius: 15px;
+            padding: 20px;
+            width: 90%;
+            max-width: 800px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        /* Header block */
+        .header {
+            background-color: #b3d962;
+            height: 150px;
+            border-radius: 5px;
+        }
+
+        /* Main content area */
+        .main-content {
+            display: flex;
+            flex-direction: row; /* Default for desktop (b) */
+            gap: 15px;
+        }
+
+        .blue-box {
+            background-color: #6ebcc7;
+            height: 150px;
+            flex: 1;
+            border-radius: 5px;
+        }
+
+        /* Footer area */
+        .footer {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr); /* Default 4 columns (b) */
+            gap: 15px;
+        }
+
+        .grey-box {
+            background-color: #e9eff2;
+            height: 80px;
+            border-radius: 5px;
+        }
+
+        /* Responsive Logic for Layout (a) */
+        @media (max-width: 480px) {
+            .main-content {
+                flex-direction: column; /* Stack blue boxes vertically */
+            }
+
+            .footer {
+                grid-template-columns: repeat(2, 1fr); /* 2x2 grid for footer */
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="header"></div>
+        
+        <div class="main-content">
+            <div class="blue-box"></div>
+            <div class="blue-box"></div>
+            <div class="blue-box"></div>
+        </div>
+
+        <div class="footer">
+            <div class="grey-box"></div>
+            <div class="grey-box"></div>
+            <div class="grey-box"></div>
+            <div class="grey-box"></div>
+        </div>
+    </div>
+
+</body>
+</html>
