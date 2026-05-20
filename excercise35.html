@@ -3,41 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JavaScript 物件屬性處理</title>
+    <title></title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f7f6;
-            padding: 20px;
-            color: #333;
-        }
-        .container {
-            max-width: 600px;
-            background: white;
-            padding: 25px;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-            margin: 0 auto;
-        }
         h2 {
-            color: #2c3e50;
+            color: black;
             border-bottom: 2px solid #3498db;
             padding-bottom: 8px;
         }
-        pre {
-            background: #272822;
-            color: #f8f8f2;
-            padding: 15px;
-            border-radius: 5px;
-            overflow-x: auto;
-            font-size: 14px;
-        }
-        ul {
-            background: #eef2f5;
-            padding: 15px 35px;
-            border-radius: 5px;
-            list-style-type: square;
-        }
+        
         li {
             margin: 5px 0;
             font-weight: bold;
@@ -47,12 +20,11 @@
 <body>
 
 <div class="container">
-    <h2>1. 原始物件的所有屬性 (Properties)</h2>
-    <p>使用 <code>Object.keys()</code> 列出：</p>
-    <ul id="properties-list"></ul>
 
-    <h2>2. 刪除 <code>age</code> 屬性後的物件內容</h2>
-    <p>使用 <code>delete Person.age</code> 後的結果：</p>
+    <h2>list all properties</h2>
+    <ul id="properties-list"></ul>
+    
+    <h2>after deleting the age</h2>
     <pre id="object-output"></pre>
 </div>
 
