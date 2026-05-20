@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Circle Functions Demo</title>
+    <style>
+        
+    </style>
+</head>
+<body>
+
+    <p>請輸入圓的半徑 (Radius)：</p>
+    <input type="number" id="radiusInput" value="5" min="0" placeholder="請輸入半徑">
+    <button onclick="runCalculations()">開始計算</button>
+
+    <div class="result" id="output">
+        </div>
+
+    <script>
+        // 1. 計算圓周長的函式
+        function calcCircumference(radius) {
+            // 圓周長公式：2 * pi * r
+            let circumference = 2 * Math.PI * radius;
+            // 四捨五入到小數點後兩位，並回傳指定的字串格式
+            return "The circumference is " + circumference.toFixed(2);
+        }
+
+        // 2. 計算圓面積的函式
+        function calcArea(radius) {
+            // 圓面積公式：pi * r^2
+            let area = Math.PI * Math.pow(radius, 2);
+            // 四捨五入到小數點後兩位，並回傳指定的字串格式
+            return "The area is " + area.toFixed(2);
+        }
+
+        // 觸發計算與顯示結果的函式
+        function runCalculations() {
+            let radius = parseFloat(document.getElementById("radiusInput").value);
+            
+            if (isNaN(radius) || radius < 0) {
+                document.getElementById("output").innerHTML = "請輸入有效的正數字半徑！";
+                return;
+            }
+
+            // 呼叫題目要求的兩個函式
+            let circumferenceResult = calcCircumference(radius);
+            let areaResult = calcArea(radius);
+
+            // 將結果輸出到網頁畫面上
+            document.getElementById("output").innerHTML = circumferenceResult + "<br>" + areaResult;
+        }
+
+        // 網頁載入時先自動執行一次預設值 (半徑為5)
+        runCalculations();
+    </script>
+
+</body>
+</html>
